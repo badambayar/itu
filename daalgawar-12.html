@@ -1,0 +1,91 @@
+daalgawar 2
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+
+h1{
+text-align: center;
+}
+
+hr {
+           border:2px solid black;
+}
+</style>
+<meta charset="utf-8">
+<script type="text/javascript">
+function hhe() {
+var
+
+var from = document.getElementById('From').value;
+var to =  document.getElementById('To').value;
+var amount = document.getElementById('Amount').value;
+var result = amount * from / to;
+document.getElementById('Convert').innerHTML = a;
+}
+</script>
+
+</head>
+<body>
+<h1><b>Currency Converter Calculator</b></h1>
+<hr>
+<b>Amount</b><br>
+<input type="number" name="amount" id="Amount">
+<br><b>From</b><br>
+<select id="From">
+<option value="1">MNT</option>
+<option value="2963">Euro</option>
+<option value="2596">Dollar</option>
+<option value="40">Rubl</option>
+<option value="2">Von</option>
+</select>
+<br><b>To</b><br>
+<select id="To">
+<option value="1">MNT</option>
+<option value="2963">Euro</option>
+<option value="2596">Dollar</option>
+<option value="40">Rubl</option>
+<option value="2">Von</option>
+</select>
+<br>
+<input type="button" onclick="hhe()" name="button" value="Convert">
+<p id="Convert"></p>
+
+
+</body>
+</html>
+daalgawar 1
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+div {
+border:1px solid black;
+text-align: center;
+}
+</style>
+
+<script type="text/javascript">
+function getname(){
+ln = document.getElementById("lname").value;
+c = ln.charAt(0);
+   fn = document.getElementById("fname").value;
+document.getElementById("btn").innerHTML= c+"."+fn;
+       }
+</script>
+
+</head>
+<body>
+<div>
+lastname : <br>
+<input type="text" id="lname"><br>
+firstname : <br>
+<input type="text" id="fname"><br><br>
+   
+<button onclick="getname()">Get name</button><br>
+<p id="btn"></p>
+   </div>
+</body>
+</html>

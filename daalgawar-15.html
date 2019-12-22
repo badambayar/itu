@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+  <p id="demo"></p>
+  
+  <script type="text/javascript">
+    var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       xml = xhttp.responseXML;
+       elem = xml.getElementsByTagName("forecast5day")[0];
+       city = elem.getElementsByTagName("city")[5].innerHTML;
+       weather = elem.getElementsByTagName("weather");
+       var table="<tr><th colspan=2 Хотын нэр: </th><th id='hotiinner'></th><tr>Он сар</th><th>Өдөр</th><th>Шөнө</th></tr>";
+       for(i=0; i<5; i++){
+        table += "<tr><td>" +
+        weather[i].getElementsByTagName("date")[0].innerHTML
+
+       table += "<td>" + weather[i].getElementsByTagName("temperatureday")[0].innerHTML;
+       table += "<td>" + weather[i].getElementsByTagName("temperatureNight")[0].innerHTML;
+     }
+     document.getElementsById("demo").innerHTML = table;
+     document.getElementsById("hotiinner").innerHTML = city;
+       }
+    }
+};
+xhttp.open("GET", "http://tsag-agaar.gov.mn/forecast_xml", true);
+xhttp.send();
+  </script>
+</body>
+</html>
